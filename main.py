@@ -1,7 +1,6 @@
 import turtle
 
-order = 2
-size = 300
+
 def koch(order, size):
     if order == 0:
         turtle.forward(size)
@@ -16,7 +15,6 @@ def koch(order, size):
 
 
 def line_koch(order, size):
-        # *********
     turtle.clearscreen()
     turtle.speed(100)
     turtle.pencolor("black")
@@ -24,14 +22,13 @@ def line_koch(order, size):
     turtle.up()
     turtle.goto(-400, 0)
     turtle.down()
-        # *********
+
     koch(order, size)
     turtle.seth(0)
 
 
 
 def sf_koch(order, size):
-    # *********
     turtle.clearscreen()
     turtle.speed(100)
     turtle.pencolor("black")
@@ -39,7 +36,7 @@ def sf_koch(order, size):
     turtle.up()
     turtle.goto(-400, 200)
     turtle.down()
-    # *********
+
     koch(order, size)
     turtle.right(120)
     koch(order, size)
@@ -69,7 +66,6 @@ def mink(order, size):
 
 
 def line_mink(order, size):
-    # *********
     turtle.clearscreen()
     turtle.speed(100)
     turtle.pencolor("black")
@@ -77,12 +73,11 @@ def line_mink(order, size):
     turtle.up()
     turtle.goto(-400, 0)
     turtle.down()
-    # *********
+
     mink(size, order)
     turtle.seth(0)
 
 def sun_mink(order, size):
-    # *********
     turtle.clearscreen()
     turtle.speed(100)
     turtle.pencolor("black")
@@ -90,7 +85,7 @@ def sun_mink(order, size):
     turtle.up()
     turtle.goto(-400, 200)
     turtle.down()
-    # *********
+
     mink(order, size)
     turtle.right(90)
     mink(order, size)
@@ -98,6 +93,7 @@ def sun_mink(order, size):
     mink(order, size)
     turtle.right(90)
     mink(order, size)
+    turtle.seth(0)
 
 
 
