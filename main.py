@@ -98,6 +98,6 @@ def sun_mink(order, size):
 
 
 turtle.up()
-turtle.home()
 turtle.hideturtle()
+turtle.home()
 turtle.done()
