@@ -1,5 +1,6 @@
 import turtle
 
+
 def koch(order, size):
     if order == 0:
         turtle.forward(size)
@@ -169,10 +170,52 @@ def line_levi(order, size):
     levi(order, size)
     turtle.seth(0)
 
-#line_ice_2(2, 800)
-line_koch(7,1000)
-#sun_mink(2, 1000)
-#line_koch(3,100)
+def hex(order, size):
+    if order == 0:
+        turtle.forward(size)
+    else:
+        hex(order - 1, size / 3)
+        turtle.left(120)
+        hex(order-1, size / 3)
+        turtle.right(60)
+        hex(order - 1, size / 3)
+        turtle.right(60)
+        hex(order - 1, size / 3)
+        turtle.right(60)
+        hex(order - 1, size / 3)
+        turtle.right(60)
+        hex(order - 1, size / 3)
+        turtle.left(120)
+        hex(order - 1, size / 3)
+
+def morehex(order, size):
+    turtle.clearscreen()
+    turtle.hideturtle()
+    turtle.tracer(0, 1)
+    turtle.pencolor("black")
+    turtle.up()
+    turtle.goto(-100, 200)
+    turtle.down()
+
+    hex(order, size)
+    turtle.right(60)
+    hex(order, size)
+    turtle.right(60)
+    hex(order, size)
+    turtle.right(60)
+    hex(order, size)
+    turtle.right(60)
+    hex(order, size)
+    turtle.right(60)
+    hex(order, size)
+    turtle.seth(0)
+
+
+fractals = ['Квадраты', 'Двоичное дерево', 'Ветка', 'Кривая Коха', 'Снежинка коха', 'Кривая Миновского', 'Ледяной 1',
+            'Ледяной 2', 'Кривая Леви', 'Шестиугольник']
+for i in range(len(fractals)):
+    print(i+1, fractals[i])
+ans = int(input())
 
 turtle.up()
 turtle.home()
