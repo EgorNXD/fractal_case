@@ -23,7 +23,42 @@ def main_squares(order, size):
 
     squares(order, size)
     turtle.seth(0)
+def color_tree(order, size):
+    turtle.colormode(255)
+    cg = 255 - int(order * (250/6)) % 255
+    turtle.color(0, cg, 0)
+    if order == 0:
+        turtle.forward(size)
+    else:
+        turtle.forward(size)
+        turtle.right(45)
+        color_tree(order - 1, size / 2)
+        turtle.left(90)
+        color_tree(order - 1, size / 2)
+        turtle.right(45)
+        turtle.backward(size)
 
+def branch(order, size):
+    if order == 0:
+       turtle.left(180)
+       return
+
+    x = size/(order+1)
+    for i in range(order):
+        turtle.forward(x)
+        turtle.left(45)
+        branch(order-i-1, 0.5*x*(order-i-1))
+        turtle.left(90)
+        branch(order-i-1, 0.5*x*(order-i-1))
+        turtle.right(135)
+
+    turtle.forward(x)
+    turtle.left(180)
+    turtle.forward(size)
+    turtle.up()
+    turtle.goto(0,-100)
+    turtle.left(90)
+    turtle.down()
 
 def koch(order, size):
     if order == 0:
@@ -52,8 +87,6 @@ def line_koch(order, size):
     turtle.home()
     turtle.done()
     turtle.seth(0)
-
-
 
 
 def sf_koch(order, size):
@@ -290,3 +323,7 @@ elif ans == 10:
 elif ans == 11:
     morehex(order, size)
 
+    turtle.up()
+    turtle.home()
+    turtle.done()
+    turtle.seth(0)2
