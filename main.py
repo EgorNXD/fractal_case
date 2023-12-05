@@ -17,21 +17,25 @@ def koch(order, size):
 def line_koch(order, size):
     turtle.clearscreen()
     turtle.hideturtle()
-    turtle.tracer(0, 1)
+    turtle.tracer(0,1)
     turtle.pencolor("black")
     turtle.up()
     turtle.goto(-400, -100)
     turtle.down()
 
     koch(order, size)
+    turtle.up()
+    turtle.home()
+    turtle.done()
     turtle.seth(0)
+
 
 
 
 def sf_koch(order, size):
     turtle.clearscreen()
     turtle.hideturtle()
-    turtle.tracer(0, 1)
+    turtle.tracer(0,1)
     turtle.pencolor("black")
     turtle.up()
     turtle.goto(-200, 200)
@@ -42,6 +46,9 @@ def sf_koch(order, size):
     koch(order, size/3)
     turtle.right(120)
     koch(order, size/3)
+    turtle.up()
+    turtle.home()
+    turtle.done()
     turtle.seth(0)
 
 
@@ -68,19 +75,22 @@ def mink(order, size):
 def line_mink(order, size):
     turtle.clearscreen()
     turtle.hideturtle()
-    turtle.tracer(0, 1)
+    turtle.tracer(0,1)
     turtle.pencolor("black")
     turtle.up()
     turtle.goto(-300, -100)
     turtle.down()
 
     mink(order, size)
+    turtle.up()
+    turtle.home()
+    turtle.done()
     turtle.seth(0)
 
 def sun_mink(order, size):
     turtle.clearscreen()
     turtle.hideturtle()
-    turtle.tracer(0, 1)
+    turtle.tracer(0,1)
     turtle.pencolor("black")
     turtle.up()
     turtle.goto(-300, 300)
@@ -93,6 +103,9 @@ def sun_mink(order, size):
     mink(order, size)
     turtle.right(90)
     mink(order, size)
+    turtle.up()
+    turtle.home()
+    turtle.done()
     turtle.seth(0)
 
 
@@ -111,13 +124,16 @@ def ice_1(order, size):
 def line_ice_1(order, size):
     turtle.clearscreen()
     turtle.hideturtle()
-    turtle.tracer(0, 1)
+    turtle.tracer(0,1)
     turtle.pencolor("black")
     turtle.up()
     turtle.goto(-300, -100)
     turtle.down()
 
     ice_1(order, size)
+    turtle.up()
+    turtle.home()
+    turtle.done()
     turtle.seth(0)
 
 def ice_2(order, size):
@@ -139,13 +155,16 @@ def ice_2(order, size):
 def line_ice_2(order, size):
     turtle.clearscreen()
     turtle.hideturtle()
-    turtle.tracer(0, 1)
+    turtle.tracer(0,1)
     turtle.pencolor("black")
     turtle.up()
     turtle.goto(-300, -100)
     turtle.down()
 
     ice_2(order, size)
+    turtle.up()
+    turtle.home()
+    turtle.done()
     turtle.seth(0)
 
 def levi(order, size):
@@ -161,13 +180,16 @@ def levi(order, size):
 def line_levi(order, size):
     turtle.clearscreen()
     turtle.hideturtle()
-    turtle.tracer(0, 1)
+    turtle.tracer(0,1)
     turtle.pencolor("black")
     turtle.up()
     turtle.goto(-300, -100)
     turtle.down()
 
     levi(order, size)
+    turtle.up()
+    turtle.home()
+    turtle.done()
     turtle.seth(0)
 
 def hex(order, size):
@@ -191,7 +213,7 @@ def hex(order, size):
 def morehex(order, size):
     turtle.clearscreen()
     turtle.hideturtle()
-    turtle.tracer(0, 1)
+    turtle.tracer(0,1)
     turtle.pencolor("black")
     turtle.up()
     turtle.goto(-100, 200)
@@ -208,6 +230,9 @@ def morehex(order, size):
     hex(order, size)
     turtle.right(60)
     hex(order, size)
+    turtle.up()
+    turtle.home()
+    turtle.done()
     turtle.seth(0)
 
 
@@ -215,9 +240,9 @@ fractals = ['Квадраты', 'Двоичное дерево', 'Ветка', '
             'Ледяной 1', 'Ледяной 2', 'Кривая Леви', 'Шестиугольник']
 for i in range(len(fractals)):
     print(i+1, fractals[i])
-ans = int(input("Выберете фрактал:"))
-order = int((input("Введите глубину рекурсии")))
-size = int(input("Введите размер"))
+ans = int(input("Введите \"Стоп\" чтобы остановить программу. Выберете фрактал:"))
+order = int((input("Введите глубину рекурсии:")))
+size = int(input("Введите размер:"))
 if ans == 1:
     main_squares(order, size)
 elif ans == 2:
@@ -241,6 +266,3 @@ elif ans == 10:
 elif ans == 11:
     morehex(order, size)
 
-turtle.up()
-turtle.home()
-turtle.done()
