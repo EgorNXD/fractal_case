@@ -211,11 +211,35 @@ def morehex(order, size):
     turtle.seth(0)
 
 
-fractals = ['Квадраты', 'Двоичное дерево', 'Ветка', 'Кривая Коха', 'Снежинка коха', 'Кривая Миновского', 'Ледяной 1',
-            'Ледяной 2', 'Кривая Леви', 'Шестиугольник']
+fractals = ['Квадраты', 'Двоичное дерево', 'Ветка', 'Кривая Коха', 'Снежинка коха', 'Кривая Миновского','Снежинка Миновского',
+            'Ледяной 1', 'Ледяной 2', 'Кривая Леви', 'Шестиугольник']
 for i in range(len(fractals)):
     print(i+1, fractals[i])
-ans = int(input())
+ans = int(input("Выберете фрактал:"))
+order = int((input("Введите глубину рекурсии")))
+size = int(input("Введите размер"))
+if ans == 1:
+    main_squares(order, size)
+elif ans == 2:
+    color_tree(order, size)
+elif ans == 3:
+    branch(order, size)
+elif ans == 4:
+    line_koch(order, size)
+elif ans == 5:
+    sf_koch(order, size)
+elif ans == 6:
+    line_mink(order, size)
+elif ans == 7:
+    sun_mink(order, size)
+elif ans == 8:
+    line_ice_1(order, size)
+elif ans == 9:
+    line_ice_2(order, size)
+elif ans == 10:
+    line_levi(order, size)
+elif ans == 11:
+    morehex(order, size)
 
 turtle.up()
 turtle.home()

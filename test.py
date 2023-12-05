@@ -22,40 +22,38 @@ def squares(order, size):
             squares(order - 1, size - 5)
 
 
-def main_squares():
+def main_squares(order, size):
+    turtle.clearscreen()
+    turtle.hideturtle()
+    turtle.tracer(0, 1)
+    turtle.pencolor("black")
     turtle.up()
-    turtle.goto(-100, 0)
-    turtle.setheading(0)
+    turtle.goto(-400, -100)
     turtle.down()
-    n = int(input('Глубина рекурсии:'))
-    a = int(input('Длина стороны:'))
-    squares(n, a)
 
-squares()
-main_squares()
+    squares(order, size)
+    turtle.seth(0)
+
+
 
 '''второй'''
 import turtle
 
 def color_tree(order, size):
-  turtle.colormode(255)
-  cg = 255 - int(order * (250/6)) % 255
-  turtle.color(0, cg, 0)
-  if order == 0:
-    turtle.forward(size)
-  else:
-    turtle.forward(size)
-    turtle.right(45)
-    color_tree(order - 1, size / 2)
-    turtle.left(90)
-    color_tree(order - 1, size / 2)
-    turtle.right(45)
-    turtle.backward(size)
+    turtle.colormode(255)
+    cg = 255 - int(order * (250/6)) % 255
+    turtle.color(0, cg, 0)
+    if order == 0:
+        turtle.forward(size)
+    else:
+        turtle.forward(size)
+        turtle.right(45)
+        color_tree(order - 1, size / 2)
+        turtle.left(90)
+        color_tree(order - 1, size / 2)
+        turtle.right(45)
+        turtle.backward(size)
 
-
-turtle.left(90)
-color_tree(6, 100)
-turtle.done()
 
 
 '''трейтий'''
@@ -66,21 +64,24 @@ def branch(order, size):
         return
 
     x = size/(order+1)
-    for i in range(n):
-        forward(x)
-        left(45)
+    for i in range(order):
+        turtle.forward(x)
+        turtle.left(45)
         branch(order-i-1, 0.5*x*(order-i-1))
-        left(90)
+        turtle.left(90)
         branch(order-i-1, 0.5*x*(order-i-1))
-        right(135)
+        turtle.right(135)
 
-    forward(x)
-    left(180)
-    forward(size)
-    up()
-    goto(0,-100)
-    left(90)
-    down()
+    turtle.forward(x)
+    turtle.left(180)
+    turtle.forward(size)
+    turtle.up()
+    turtle.goto(0,-100)
+    turtle.left(90)
+    turtle.down()
     branch(5,400)
 
-    squares(0, 500)
+#turtle.left(90)
+#color_tree(5, 200)
+branch(5, 200)
+turtle.done
