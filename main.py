@@ -1,5 +1,29 @@
 import turtle
 
+def squares(order, size):
+    if order == 0:
+        return None
+    else:
+        for i in range(4):
+            turtle.forward(size)
+            turtle.right(90)
+        turtle.forward(size * 0.05)
+        turtle.right(10)
+        squares(order - 1, size - 5)
+
+
+def main_squares(order, size):
+    turtle.clearscreen()
+    turtle.hideturtle()
+    turtle.tracer(0, 1)
+    turtle.pencolor("black")
+    turtle.up()
+    turtle.goto(-400, -100)
+    turtle.down()
+
+    squares(order, size)
+    turtle.seth(0)
+
 
 def koch(order, size):
     if order == 0:
