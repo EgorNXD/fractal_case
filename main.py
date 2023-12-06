@@ -2,7 +2,7 @@ import turtle
 
 def squares(order, size):
     if order == 0:
-        return None
+        return
     else:
         for i in range(4):
             turtle.forward(size)
