@@ -9,7 +9,7 @@ def squares(order, size):
             turtle.right(90)
         turtle.forward(size * 0.05)
         turtle.right(10)
-        squares(order - 1, size - 5)
+        squares(order - 1, size * 0.8)
 
 
 def main_squares(order, size):
@@ -55,10 +55,8 @@ def branch(order, size):
     turtle.forward(x)
     turtle.left(180)
     turtle.forward(size)
-    turtle.up()
-    turtle.goto(0,-100)
-    turtle.left(90)
-    turtle.down()
+
+
 
 def koch(order, size):
     if order == 0:
@@ -303,8 +301,13 @@ size = int(input("Введите размер:"))
 if ans == 1:
     main_squares(order, size)
 elif ans == 2:
+    turtle.left(90)
     color_tree(order, size)
 elif ans == 3:
+    turtle.up()
+    turtle.goto(0, -100)
+    turtle.left(90)
+    turtle.down()
     branch(order, size)
 elif ans == 4:
     line_koch(order, size)
@@ -323,7 +326,7 @@ elif ans == 10:
 elif ans == 11:
     morehex(order, size)
 
-    turtle.up()
-    turtle.home()
-    turtle.done()
-    turtle.seth(0)2
+turtle.up()
+turtle.home()
+turtle.done()
+turtle.seth(0)
